@@ -1,21 +1,18 @@
 export interface Post {
-  id: string;
+  _id: string;
   title: string;
   description: string;
-  date: string;
-  tags: string[];
-  category: string[];
-  image: string;
-  author: string;
+  imageurl: string;
+  category: string;
+  blogid: string;
 }
 
 export interface ReadingPost {
-  id: string;
+  _id: string;
   title: string;
   description: string;
-  date: string;
-  tag: string;
+  imageurl: string;
   category: string;
-  image: string;
-  author: string;
+  content: string;
+  blogid: string;
 }
