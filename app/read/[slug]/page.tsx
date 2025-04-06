@@ -4,19 +4,19 @@ import { Newsletter } from '@/components/Newsletter';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { BlogCard } from '@/components/Card';
-import { GetAllPosts, GetPost, RelatedPosts } from '@/data';
+import { GetAllPosts, GetPost
+  //  RelatedPosts
+   } from '@/data';
 import { Asterisk } from 'lucide-react';
 
-export const generateStaticParams = async () => GetAllPosts().map((post) => ({ slug: post.slug }))
+export const generateStaticParams = async () => GetAllPosts().map((post) => ({ slug: post.category }))
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
 
   const slug = (await params).slug
 
-  // const post = GetPost(slug)
-  const res = await fetch(`https://blog-backend-3lxt.onrender.com/api/blog/${slug}`);
-  const post:ReadingPost = await res.json();
-
+  const post = await GetPost(slug)
+  
   if (!post) {
     notFound()
   }
@@ -27,9 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
-  const res = await fetch(`https://blog-backend-3lxt.onrender.com/api/blog/${slug}`);
-  const post:ReadingPost = await res.json();
-
+  const post = await GetPost(slug)
   if (post === undefined) {
     notFound()
   }
@@ -61,7 +59,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <div className="flex-1 border-b border-fd-border"></div>
       </div>
 
-      <Newsletter />
       {/* {
         getRelatedPosts.length !== 0 && <div className="mt-28 mx-auto container">
           <h1 className="text-3xl font-extrabold lg:text-6xl"> Related Posts </h1>

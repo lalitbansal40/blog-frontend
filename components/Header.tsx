@@ -28,7 +28,11 @@ export function Header() {
               <Button variant="link">Home</Button>
             </Link>
           </NavigationMenuItem>
-
+          <NavigationMenuItem>
+            <Link href="/tag/trending" className="text-background">
+              <Button variant="link">Trending</Button>
+            </Link>
+          </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="/tag/programming" className="text-background">
               <Button variant="link">Programming</Button>
@@ -41,11 +45,6 @@ export function Header() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/tag/smart-phone" className="text-background">
-              <Button variant="link">Smart Phone</Button>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
             <Link href="/pages/about" className="text-background">
               <Button variant="link">About</Button>
             </Link>
@@ -54,31 +53,31 @@ export function Header() {
       </NavigationMenu>
 
       <div className="xl:col-span-2 mx-auto xl:col-start-5 gap-4 xl:gap-2 flex flex-row flex-wrap">
-        <Button variant="link" asChild>
+        {/* <Button variant="link" asChild>
           <Link href={"#"}>
             <Facebook />
           </Link>
-        </Button>
+        </Button> */}
 
         <Button variant="link" asChild>
-          <Link href={"#"}>
+          <Link href={"https://www.instagram.com/lalitbansal40/?hl=en"}>
             <Instagram />
           </Link>
         </Button>
 
-        <Button variant="link" asChild>
+        {/* <Button variant="link" asChild>
           <Link href={"https://x.com/FrontendWeb3"}>
             <Twitter />
           </Link>
-        </Button>
+        </Button> */}
 
         <Button variant="link" asChild>
-          <Link href={"https://www.linkedin.com/company/frontendweb"}>
+          <Link href={"https://www.linkedin.com/in/lalitbansal40/"}>
             <Linkedin />
           </Link>
         </Button>
 
-        <Button className="rounded-2xl"> Subscrible </Button>
+        {/* <Button className="rounded-2xl"> Subscrible </Button> */}
         <ThemeToggle />
       </div>
     </header>

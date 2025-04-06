@@ -1,9 +1,8 @@
-import { Newsletter } from '@/components/Newsletter';
-import { Pagination } from '../components/Pagination';
 import { BlogCard } from "@/components/Card";
 import { Hero } from "@/components/Hero";
 import { Metadata } from 'next';
 import { Post } from "@/types"
+import { GetAllPosts } from "@/data";
 export const metadata: Metadata = {
   title: "Home | AllTypeBlogs",
   description: "AllTypeBlogs is an open-source nextjs blog template design with tailwind CSS.",
@@ -11,8 +10,7 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
-  const res = await fetch("https://blog-backend-3lxt.onrender.com/api/blogList");
-  const posts:Post[] = await res.json();
+  const posts:Post[] = GetAllPosts();
   return (
     <>
       <Hero />
@@ -31,11 +29,8 @@ export default async function Page() {
           }
         </div>
 
-        <Pagination />
-
       </main>
 
-      <Newsletter />
     </>
   )
 }

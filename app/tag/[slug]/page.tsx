@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
       <div className="mt-8 mx-auto container">
         {
-          posts.map((item: Post) => <BlogCard item={item} key={item.id} />)
+          posts.map((item: Post) => <BlogCard item={item} key={item._id} />)
         }
 
       </div>
