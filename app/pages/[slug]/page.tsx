@@ -26,69 +26,34 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <>
-      <Card className="max-w-6xl border-none bg-none shadow-none flex flex-col mx-auto mt-12">
-        <CardContent>
-          <div className="flex flex-row items-center text-center mb-3">
-            <Button className='rounded-2xl' asChild>
-              <Link href="/">
-                <ChevronLeft /> Back
-              </Link>
-            </Button>
-          </div>
+ <div className="min-h-screen bg-[hsl(var(--background))] text-white px-6 py-12 flex flex-col items-center">
+      <div className="max-w-4xl w-full space-y-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold">About Us</h1>
+        <p className="text-lg leading-relaxed text-gray-300">
+          Welcome to <span className="text-white font-semibold">AllTypesBlogs</span> – your ultimate destination for diverse, high-quality content. 
+          Whether you're into tech, lifestyle, travel, wellness, finance, or food, we’ve got you covered. 
+          Our mission is to inspire, inform, and empower readers through a wide range of thoughtful, engaging blogs.
+        </p>
 
-          <CardTitle className="text-3xl font-extrabold lg:text-6xl capitalize">
-            {getTitle}
-          </CardTitle>
-        </CardContent>
-      </Card>
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="https://lalitbansal2004.s3.us-east-1.amazonaws.com/bloglistimages/image.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIA5C5E627FAEYAYLPB%2F20250406%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250406T172323Z&X-Amz-Expires=300&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGmKav%2F5W6GH4nU6qfnBB5rqfUqeomDDrqU4vZTTVLgiAiAzteUM6YD2WHi81DVrxXYF1tWgebIhMQo8NwBDsODsISrsAghLEAAaDDg5OTYwNDczMTg1MCIM3iL4NUciao%2BAjFNrKskCOXC0TyEHGYRUzJabNUBdPwSYT6xK8igw4ZLsWTPv3NIfPfQB3P8RJ8HpNjZsGHdnG0I%2Bc7ypxzYJ1LTCWVB8kvj%2BVd5GqEeeA3aDeqY1ufBrFy%2BdMIVxHdNW68fxA%2Bk1vi2t7U8lPiGFiBaNlkm9AkpBvF2NxVOmd9dHWYEFmamlFmV5yDvcqsv0yAX0rqNGydzPxf7jWqz3%2FjvZbsEdyhoqm5DTE6KOAdk1Sve4aaa1Uzzo8sKFSuvcoTzfcgzsPk%2BrZVmre9sHTixvCynhGRGWx2e1ZZSu3%2FQBYV2WO9ICjlCG4E3UU3%2FM3hSlzzgihKY6Hl0tal2xXiLrWcFrT6RRdw9gCt1eqgpNJ2l2%2B2Wpn8VpJuQS%2Bh3OZKP7aqlZSKgWXp3L5Um8P08OnIQBA3Nx5Wab4VULOIBAhzJszsTHVSYWyDraqYgwlp7KvwY6tAJj7M8%2FL%2B34Lr3elKT6VTNUApgZDpUEjG6WrR0DFBrV44ZYhr0%2BvCFBGhev6r5LyAGTeugsWiCTQdi2saRR6wpHUIDKqFhlQZThF79Irf9M0FXX0cA83qAR8bBYKjminYoApxZcBMEdTO22qmvXsS3FBPydxKVs34lfgb3wSzvEC9aDutm3rffaeKxg6S2HgI7Ey6GkcvO%2BD7qgxuOdIx8Kx8l0KIJCU5kWMBgZ3NLb4%2BZOcqZVCjGbf8lpkdFf5ZWg7n6TIieIFBum3XH%2FawPG4l3BPYwtCMLgOs2r9NJ0prHfiwak%2FnrMGH%2BarZRCXrVA%2FSb0cR2n45AlIA8TqXnORjBe2qHnKBxv3C2lpSDiFXZ%2B0IJiy4GpsxCyL3gvz5UKHKP3m2xMYxpCArG95BVK6RcSoA%3D%3D&X-Amz-Signature=ffe927b438cf38b396e0942038b923982f3ec1256945300754f1325ae45f5ddc&X-Amz-SignedHeaders=host&response-content-disposition=inline"
+            alt="Team working together"
+            className="w-full object-cover "
+          />
+        </div>
 
-      <article className="px-6 container mx-auto max-w-6xl prose dark:prose-invert lg:prose-xl">
-        <p>Cupidatat voluptate deserunt non ea exercitation sit consequat ullamco ex nostrud elit magna. Nulla id proident labore pariatur pariatur ex ut ad enim et labore.</p>
-        <h2><a id="Est_do_minim_eiusmod_culpa_2"></a>Est do minim eiusmod culpa.</h2>
-        <p><a href="https://google.com">Culpa laboris aliquip ea consectetur</a> mollit ea ipsum sint qui culpa laboris dolor adipisicing proident. Et officia consequat do nulla tempor cupidatat elit. Consequat proident magna dolor labore et esse aute dolor sit ea.</p>
-        <p>Sint amet deserunt commodo aute consectetur Lorem qui aliqua tempor nulla. `Velit non` ea qui aliquip. Qui laborum labore excepteur duis velit velit enim enim veniam.</p>
-        <blockquote>
-          <p>Pariatur laboris commodo est laboris. In incididunt pariatur aliquip ut elit irure magna anim sunt. Anim labore ut sit magna ex proident dolor anim cupidatat adipisicing.</p>
-        </blockquote>
-        <h2><a id="5_Things_9"></a>5 Things</h2 >
-        <ul>
-          <li>Minim est mollit commodo ad sit quis.</li>
-          <li>Tempor id magna eu veniam sint et mollit magna laboris reprehenderit Lorem proident.</li>
-          <li>Laborum id sint ex magna nulla est labore non.</li>
-          <li>Pariatur qui qui ex duis nulla et aute magna incididunt cupidatat commodo.</li>
-          <li>Sint amet deserunt commodo aute consectetur.</li>
-        </ul>
-        <p>Aliquip veniam aliquip nisi non amet pariatur quis. Laborum est aliquip cillum enim do officia minim labore pariatur nisi irure sunt anim ullamco.</p>
-        <h2> <a id="What_is_Lorem_Ipsum__Meaning_18"></a>What is Lorem Ipsum  Meaning ?</h2 >
-        <p>Sint qui enim non Lorem aliquip nulla sint. Aute laborum tempor adipisicing officia magna fugiat sint cupidatat. Enim Lorem officia anim cillum ea tempor dolore voluptate:</p>
-        <ul>
-          <li><strong>Excepteur aliqua</strong> minim Lorem officia ullamco pariatur.</li>
-          <li><strong>Fugiat</strong> sint pariatur tempor ullamco sit ea excepteur sint ut qui excepteur dolore anim.</li>
-          <li><strong>Eiusmod</strong> id dolor sit fugiat eu eiusmod tempor proident.</li>
-          <li><strong>Officia enim</strong> dolore excepteur proident incididunt et sint. Non laboris veniam nisi adipisicing magna.</li>
-        </ul>
-        <p>Nulla ut irure aliqua ex aliquip nisi non amet excepteur ipsum laboris voluptate elit. Aliquip proident magna Lorem amet esse laborum cillum.  Culpa aute laborum velit velit in do. Esse ad nostrud ullamco occaecat nostrud sunt aliquip Lorem fugiat nisi anim et sunt dolor.</p>
-        <h2> <a id="Voluptate_tempor_28"></a>Voluptate tempor</h2 >
-        <p>Nisi ad aliquip minim quis cupidatat eu minim voluptate tempor consequat irure eu. Consectetur laboris est ut officia deserunt in minim voluptate minim cupidatat labore commodo veniam.</p>
-        <ul>
-          <li>Commodo deserunt cupidatat</li>
-          <li>Deserunt commodo est</li>
-          <li>Lorem eiusmod proident</li>
-          <li>Sunt sit voluptate</li>
-        </ul>
-        <h2> <a id="Conclusion_36"></a>Conclusion</h2>
-        <p>Consectetur aliqua eu veniam consequat eu adipisicing id ullamco incididunt. Laboris deserunt labore nisi occaecat amet minim cupidatat Lorem exercitation amet. Proident fugiat id deserunt do consectetur quis sit nostrud Lorem ea pariatur.</p>
-        <p> Occaecat et esse sunt dolore nisi aliquip et non do sint. Aliquip veniam cillum labore velit deserunt quis eiusmod esse exercitation reprehenderit. Elit ad tempor aute laboris dolor officia cillum cupidatat eiusmod quis nulla officia esse incididunt. Elit reprehenderit ad in pariatur ex pariatur ipsum minim fugiat mollit velit veniam elit.</p>
-      </article>
+        <p className="text-lg leading-relaxed text-gray-300">
+          <span className="text-white font-medium">AllTypesBlogs</span> is proudly owned and operated by a passionate team of creators and writers dedicated to bringing you content that matters. 
+          We're not just a blog — we’re a community of storytellers, thinkers, and learners. 
+          Our vision is to make knowledge accessible and enjoyable for everyone.
+        </p>
 
-      <div className="my-10 flex w-full items-center rounded-full">
-        <div className="flex-1 border-b border-fd-border"></div>
-        <span className=" flex flex-row text-lg font-semibold leading-8 px-8 py-3"> <Asterisk /> <Asterisk /> <Asterisk /> </span>
-        <div className="flex-1 border-b border-fd-border"></div>
+        <p className="text-lg leading-relaxed text-gray-300">
+          Thank you for being part of our journey. Whether you're a casual reader or a lifelong learner, we’re glad you're here.
+        </p>
       </div>
-
-      <Newsletter />
-
+    </div>
     </>
   );
 }

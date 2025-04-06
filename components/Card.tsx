@@ -7,7 +7,11 @@ import { Post } from "@/types"
 import Link from "@/node_modules/next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from 'lucide-react';
-
+import { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Home | AllTypeBlogs",
+  description: "AllTypeBlogs is an open-source nextjs blog template design with tailwind CSS.",
+};
 export function BlogCard({ item }: { item: Post }) {
 
   return (
