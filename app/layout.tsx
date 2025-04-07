@@ -25,8 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}  dark:bg-grid-small-white/5 bg-grid-small-black/5`}>
+<html lang="en">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="ChXAkG_GyJAQBx95TtxOjzZyK1ccyRtTXblw8jFv1vE"
+        />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-8995721945300891"
+        />
+      </Head>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} dark:bg-grid-small-white/5 bg-grid-small-black/5`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
