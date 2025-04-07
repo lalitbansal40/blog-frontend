@@ -47,9 +47,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
       }
      <article
-  className="px-6 container mx-auto max-w-6xl prose dark:prose-invert lg:prose-xl"
-  dangerouslySetInnerHTML={{ __html: post.content }}
-/>
+    className="px-6 container mx-auto max-w-6xl prose dark:prose-invert lg:prose-xl"
+    dangerouslySetInnerHTML={{ __html: String(post.content) }}
+  />
 
       <div className="my-10 flex w-full items-center rounded-full">
         <div className="flex-1 border-b border-fd-border"></div>
