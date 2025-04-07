@@ -36,7 +36,7 @@ export default function RootLayout({
           content="ca-pub-8995721945300891"
         />
       </Head>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} dark:bg-grid-small-white/5 bg-grid-small-black/5`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} dark:bg-grid-small-white/5 bg-grid-small-black/5`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
