@@ -39,8 +39,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       {post?.imageurl && <div className="my-10  relative aspect-[4/3] overflow-hidden">
         <Image
           src={post.imageurl}
-          // src="https://i.sstatic.net/bkC9s.jpg"
-
           alt={post.title}
           className="object-fill"
           fill
@@ -58,6 +56,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <span className=" flex flex-row text-lg font-semibold leading-8 px-8 py-3"> <Asterisk /> <Asterisk /> <Asterisk /> </span>
         <div className="flex-1 border-b border-fd-border"></div>
       </div>
+
 
       {/* {
         getRelatedPosts.length !== 0 && <div className="mt-28 mx-auto container">

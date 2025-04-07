@@ -3,8 +3,10 @@ import type { Post, ReadingPost } from "@/types";
 function slugify(slug: string) {
   return slug.toLowerCase().trim().split(" ").join("-")
 }
+
 const res = await fetch("https://blog-backend-3lxt.onrender.com/api/blogList");
 const allPosts: Post[] = await res.json();
+
 // Home Page
 export function GetAllPosts() {
   return allPosts

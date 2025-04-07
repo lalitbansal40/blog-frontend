@@ -2,7 +2,8 @@ import { BlogCard } from "@/components/Card";
 import { Hero } from "@/components/Hero";
 import { Metadata } from 'next';
 import { Post } from "@/types"
-import { GetAllPosts } from "@/data";
+import {  GetAllPosts } from "@/data";
+
 export const metadata: Metadata = {
   title: "Home | AllTypeBlogs",
   description: "AllTypeBlogs is an open-source nextjs blog template design with tailwind CSS.",
@@ -28,7 +29,6 @@ export default async function Page() {
             )
           }
         </div>
-
       </main>
 
     </>
