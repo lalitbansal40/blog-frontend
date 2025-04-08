@@ -27,14 +27,8 @@ export default function RootLayout({
   return (
 <html lang="en">
       <Head>
-        <meta
-          name="google-site-verification"
-          content="ChXAkG_GyJAQBx95TtxOjzZyK1ccyRtTXblw8jFv1vE"
-        />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-8995721945300891"
-        />
+       <meta name="google-site-verification" content="ChXAkG_GyJAQBx95TtxOjzZyK1ccyRtTXblw8jFv1vE" />
+<meta name="google-adsense-account" content="ca-pub-5107855802553966">
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} dark:bg-grid-small-white/5 bg-grid-small-black/5`}>
         <ThemeProvider
