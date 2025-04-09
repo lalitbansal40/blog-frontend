@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 
 export default async function Page() {
-  const posts:Post[] = GetAllPosts();
+  const posts:Post[] = await GetAllPosts();
   return (
     <>
       <Hero />

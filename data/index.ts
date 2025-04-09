@@ -1,68 +1,48 @@
 import type { Post, ReadingPost } from "@/types";
 
 function slugify(slug: string) {
-  return slug.toLowerCase().trim().split(" ").join("-")
+  return slug.toLowerCase().trim().split(" ").join("-");
 }
-
-const res = await fetch("https://blog-backend-3lxt.onrender.com/api/blogList");
-const allPosts: Post[] = await res.json();
 
 // Home Page
-export function GetAllPosts() {
-  return allPosts
+export async function GetAllPosts(): Promise<Post[]> {
+  const res = await fetch("https://blog-backend-3lxt.onrender.com/api/blogList", {
+    cache: "no-store", // ensures fresh fetch
+  });
+  const allPosts: Post[] = await res.json();
+  return allPosts;
 }
 
-// Read page 
-export async function GetPost(slug: string) {
-  const res = await fetch(`https://blog-backend-3lxt.onrender.com/api/blog/${slug}`);
+// Read Page
+export async function GetPost(slug: string): Promise<ReadingPost> {
+  const res = await fetch(`https://blog-backend-3lxt.onrender.com/api/blog/${slug}`, {
+    cache: "no-store",
+  });
   const post: ReadingPost = await res.json();
-  return post as ReadingPost;
+  return post;
 }
 
-// export function RelatedPosts(tag: string, dontInclude: string) {
-//   const RelatedPosts: Post[] = []
-
-//   allPosts.map((post) => {
-//     if (post.tags !== undefined) {
-//       post.tags.filter(item => {
-//         if (slugify(item) === slugify(tag)) {
-//           if (dontInclude !== post.slug) {
-//             RelatedPosts.push(post)
-//           }
-//         }
-//       })
-//     }
-//   })
-//   return RelatedPosts
-// }
-// Tag Page
-export async function GetTagsPost(slug: string) {
-
-  const TagPosts: Post[] = []
-
-  allPosts.map((post) => {
-    if (post.category !== undefined) {
-      if (post.category.toLowerCase().trim().split(" ").join("-") === slug) {
-        TagPosts.push(post)
-      }
-    }
-  })
-
-  return TagPosts
-
+// Tag Page - Posts by Tag
+export async function GetTagsPost(slug: string): Promise<Post[]> {
+  const allPosts = await GetAllPosts();
+  const tagPosts = allPosts.filter(
+    (post) =>
+      post.category &&
+      slugify(post.category) === slug
+  );
+  return tagPosts;
 }
-// Tag Page
-export async function GetTags() {
 
-  const TagsList: { slug: string; }[] = []
+// Tag Page - List of Tags
+export async function GetTags(): Promise<{ slug: string }[]> {
+  const allPosts = await GetAllPosts();
+  const tagSet = new Set<string>();
 
-  allPosts.map((post) => {
-    if (post.category !== undefined) {
-      let formatTag = post.category.toLowerCase().trim().split(" ").join("-")
-      if (formatTag) {
-        TagsList.push({ slug: formatTag })
-      }
+  allPosts.forEach((post) => {
+    if (post.category) {
+      tagSet.add(slugify(post.category));
     }
-  })
-  return TagsList
+  });
+
+  return Array.from(tagSet).map((tag) => ({ slug: tag }));
 }

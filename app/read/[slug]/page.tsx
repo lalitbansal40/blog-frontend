@@ -8,8 +8,8 @@ import { GetAllPosts, GetPost
   //  RelatedPosts
    } from '@/data';
 import { Asterisk } from 'lucide-react';
-
-export const generateStaticParams = async () => GetAllPosts().map((post) => ({ slug: post.category }))
+const postsData = await GetAllPosts();
+export const generateStaticParams = async () =>  postsData.map((post) => ({ slug: post.category }))
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
 
